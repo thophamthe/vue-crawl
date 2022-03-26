@@ -4,10 +4,10 @@
       <template #left>
         <img src="/logo2.png" alt="" />
       </template>
-      <vs-navbar-item :active="active == 'guide'" id="guide">
-        Guide
+      <vs-navbar-item to="/" :active="active == 'home'" id="home">
+        Home
       </vs-navbar-item>
-      <vs-navbar-item :active="active == 'docs'" id="docs">
+      <vs-navbar-item to="document" :active="active == 'docs'" id="docs">
         Documents
       </vs-navbar-item>
       <vs-navbar-item :active="active == 'components'" id="components">
@@ -26,8 +26,12 @@
 <script>
 export default {
   data: () => ({
-    active: "guide",
+    active: "home",
   }),
 };
 </script>
-<style scoped></style>
+<style scoped>
+.active {
+  color: #5b3cc4;
+}
+</style>

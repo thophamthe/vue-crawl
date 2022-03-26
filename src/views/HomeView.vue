@@ -1,142 +1,195 @@
 <template>
   <div class="home">
-    <Item
-      v-for="(item, index) in items"
-      data="index"
-      v-bind:name="item.name"
-      v-bind:img="item.img"
-      v-bind:desc="item.desc"
-      :key="index"
-    />
+    <vs-row>
+      <vs-col offset="2" vs-type="flex" vs-justify="center" vs-align="center">
+        <FormAction />
+      </vs-col>
+    </vs-row>
+    <vs-row>
+      <Item
+        v-for="(item, index) in items"
+        data="index"
+        v-bind:name="item.name"
+        v-bind:img="item.img"
+        v-bind:desc="item.desc"
+        v-bind:from="item.from"
+        v-bind:price="item.price"
+        v-bind:size="item.size"
+        :key="index"
+      />
+    </vs-row>
   </div>
 </template>
 
 <script>
 import Item from "../components/Item.vue";
+import FormAction from "../components/FormAction.vue";
 export default {
   name: "HomeView",
-  components: { Item },
+  components: { Item, FormAction },
   data: () => ({
     items: [
       {
-        name: "Manchester",
-        img: "http://placeimg.com/640/480",
-        desc: "Veniam eos qui qui ut eligendi facilis non harum quia.",
+        name: "Home Loan Account",
+        img: "http://placeimg.com/640/480/sports",
+        desc: "Ut ut qui qui molestiae magni voluptas nulla quibusdam.",
+        price: "485.00",
+        size: 14878,
+        from: "Provo",
         id: "1",
       },
       {
-        name: "Mansfield",
-        img: "http://placeimg.com/640/480",
-        desc: "Voluptas et ab rerum fugiat.\nQuam porro quaerat perspiciatis ut animi molestiae ea.\nQuisquam omnis vel dolor vero sed doloremque doloribus omnis.",
+        name: "Money Market Account",
+        img: "http://placeimg.com/640/480/sports",
+        desc: "Commodi velit dolor totam unde nobis officia in.",
+        price: "545.00",
+        size: 35901,
+        from: "Commerce City",
         id: "2",
       },
       {
-        name: "Trenton",
-        img: "http://placeimg.com/640/480",
-        desc: "Sint corporis adipisci optio porro est dolores debitis.",
+        name: "Money Market Account",
+        img: "http://placeimg.com/640/480/technics",
+        desc: "earum dolor iure",
+        price: "987.00",
+        size: 24501,
+        from: "Casper",
         id: "3",
       },
       {
-        name: "Waterloo",
-        img: "http://placeimg.com/640/480",
-        desc: "iure possimus dolorem",
+        name: "Credit Card Account",
+        img: "http://placeimg.com/640/480/nightlife",
+        desc: "Iste nostrum pariatur.",
+        price: "841.00",
+        size: 21612,
+        from: "Apple Valley",
         id: "4",
       },
       {
-        name: "University",
-        img: "http://placeimg.com/640/480",
-        desc: "Minus numquam voluptatem tempore delectus exercitationem et rerum quidem excepturi. Eum aut occaecati minus ipsam earum.",
+        name: "Investment Account",
+        img: "http://placeimg.com/640/480/city",
+        desc: "Aliquid dicta debitis tempora enim accusantium earum. Cum numquam rerum tempore est. Exercitationem illum ut aut. Perferendis perspiciatis eius esse eius vitae.\n \rExpedita suscipit repellendus at perferendis. Qui consequatur dolorem harum veritatis aut. Aut nisi sint omnis. Nihil iusto est eos ea.\n \rEt quia enim fugit ipsum doloribus in. Vel sit quia quas nihil id. Sunt eveniet aliquid eveniet. Reprehenderit omnis cupiditate qui vel non nulla.",
+        price: "731.00",
+        size: 14450,
+        from: "Fort Lauderdale",
         id: "5",
       },
       {
-        name: "Miami",
-        img: "http://placeimg.com/640/480",
-        desc: "eos et sint",
+        name: "Checking Account",
+        img: "http://placeimg.com/640/480/sports",
+        desc: "Perspiciatis et sed odit magnam. Nobis ab ea alias velit. Sint cumque aut unde. Aut reprehenderit dolorum fuga et. Excepturi laboriosam consectetur expedita quis fuga vel natus velit.",
+        price: "492.00",
+        size: 22209,
+        from: "Waterbury",
         id: "6",
       },
       {
-        name: "Guaynabo",
-        img: "http://placeimg.com/640/480",
-        desc: "Rerum tempore ad necessitatibus ipsam odio omnis. Sed accusamus ex. Repudiandae libero corporis rem fugit occaecati vel ut rerum tenetur. Modi quibusdam blanditiis alias. Aut laborum enim alias. Ut molestiae provident temporibus omnis.",
+        name: "Home Loan Account",
+        img: "http://placeimg.com/640/480/food",
+        desc: "Sunt quia quia earum dolore qui provident qui. Ut sapiente qui debitis ut ullam laboriosam reiciendis dicta blanditiis. Possimus provident suscipit veniam est. Est natus qui ad repellendus quaerat ut rem. Non hic vitae.\n \rFacilis aliquam itaque sunt saepe voluptatum odit vel sunt dolores. Voluptates suscipit et recusandae nulla culpa modi iusto. Aut dolorum eos velit natus dolor.\n \rPraesentium neque at cupiditate recusandae fugit nihil. Nesciunt ipsam velit cum. Ut possimus ipsam vitae aut. Earum omnis aliquid voluptatem sint recusandae sed temporibus quo.",
+        price: "464.00",
+        size: 29448,
+        from: "Deerfield Beach",
         id: "7",
       },
       {
-        name: "Sioux City",
-        img: "http://placeimg.com/640/480",
-        desc: "Nihil quia quo ipsa laborum aut non a commodi. Distinctio error excepturi. Dolore laboriosam dolorem et sed deserunt adipisci et quisquam. Alias ut ullam.\n \rArchitecto corrupti quaerat explicabo doloribus sunt ut quia occaecati ut. Reprehenderit est voluptatem voluptatem eveniet. Officia voluptas minus. Ut quo dolor sunt porro. Vero dolorem repudiandae. Doloribus et sequi totam omnis iure corporis.\n \rEum aut dolor. Totam ut illum magnam. Officiis praesentium eum ut dolores harum quisquam sapiente. Aut non dicta. Et sit distinctio dicta.",
+        name: "Home Loan Account",
+        img: "http://placeimg.com/640/480/abstract",
+        desc: "Minima ea eum dolore suscipit nihil.\nNobis consequatur est dolorem explicabo.\nEt rerum autem autem natus.\nIste vel accusantium earum placeat reprehenderit rerum eos tempore.\nTempore possimus ut aut nihil.",
+        price: "177.00",
+        size: 91118,
+        from: "North Miami Beach",
         id: "8",
       },
       {
-        name: "Knoxville",
-        img: "http://placeimg.com/640/480",
-        desc: "Quidem quibusdam est.",
+        name: "Savings Account",
+        img: "http://placeimg.com/640/480/city",
+        desc: "Minus quibusdam voluptatum rerum corrupti fugiat omnis. Et nisi consequatur hic rem eum. Cupiditate eius at corporis. Optio laborum tempora praesentium. Eligendi quia molestiae eaque enim dolor. Ea officiis consectetur sint culpa quia nobis qui.",
+        price: "807.00",
+        size: 27345,
+        from: "Scottsdale",
         id: "9",
       },
       {
-        name: "Killeen",
-        img: "http://placeimg.com/640/480",
-        desc: "Voluptas et non.",
+        name: "Savings Account",
+        img: "http://placeimg.com/640/480/fashion",
+        desc: "Illum amet molestiae a.",
+        price: "272.00",
+        size: 17844,
+        from: "Azusa",
         id: "10",
       },
       {
-        name: "Fort Lauderdale",
-        img: "http://placeimg.com/640/480",
-        desc: "repellendus",
+        name: "Investment Account",
+        img: "http://placeimg.com/640/480/transport",
+        desc: "Porro architecto aut.",
+        price: "534.00",
+        size: 14062,
+        from: "Little Rock",
         id: "11",
       },
       {
-        name: "Chino Hills",
-        img: "http://placeimg.com/640/480",
-        desc: "Nihil aut ea ex officia aut. Non odio et voluptatem qui eligendi facere omnis sed. Reprehenderit mollitia et est amet nemo accusantium placeat. Culpa inventore sit. Ducimus nihil quasi voluptas aut.",
+        name: "Checking Account",
+        img: "http://placeimg.com/640/480/nature",
+        desc: "earum",
+        price: "519.00",
+        size: 48671,
+        from: "Bell Gardens",
         id: "12",
       },
       {
-        name: "Bend",
-        img: "http://placeimg.com/640/480",
-        desc: "ex",
+        name: "Personal Loan Account",
+        img: "http://placeimg.com/640/480/nightlife",
+        desc: "quia aliquid facilis",
+        price: "216.00",
+        size: 15614,
+        from: "Fort Worth",
         id: "13",
       },
       {
-        name: "New Rochelle",
-        img: "http://placeimg.com/640/480",
-        desc: "Voluptatem exercitationem qui voluptas iure magnam saepe cum mollitia.\nArchitecto expedita id omnis et.\nOfficiis qui nihil alias velit veritatis id iusto.\nReprehenderit quia ipsa in ex dolorem voluptatem.\nDolorum odit mollitia asperiores commodi.",
+        name: "Investment Account",
+        img: "http://placeimg.com/640/480/fashion",
+        desc: "Officiis sapiente ut facilis molestiae iste cupiditate distinctio est ea.",
+        price: "140.00",
+        size: 91988,
+        from: "Minot",
         id: "14",
       },
       {
-        name: "West Des Moines",
-        img: "http://placeimg.com/640/480",
-        desc: "Aut maxime ut vel eligendi.",
+        name: "Credit Card Account",
+        img: "http://placeimg.com/640/480/transport",
+        desc: "non tenetur quia",
+        price: "107.00",
+        size: 5375,
+        from: "Murfreesboro",
         id: "15",
       },
       {
-        name: "Santa Fe",
-        img: "http://placeimg.com/640/480",
-        desc: "ea atque molestiae",
+        name: "Money Market Account",
+        img: "http://placeimg.com/640/480/nature",
+        desc: "sit",
+        price: "392.00",
+        size: 30970,
+        from: "Sheboygan",
         id: "16",
       },
       {
-        name: "Montebello",
-        img: "http://placeimg.com/640/480",
-        desc: "animi et architecto",
+        name: "Savings Account",
+        img: "http://placeimg.com/640/480/fashion",
+        desc: "Ipsum fugit suscipit et laborum perferendis.\nRatione ut qui sunt aut ducimus ab autem.\nMinima dolore deserunt qui.\nCumque nemo fugit debitis ut excepturi alias et.",
+        price: "673.00",
+        size: 18870,
+        from: "South Hill",
         id: "17",
       },
       {
-        name: "Cerritos",
-        img: "http://placeimg.com/640/480",
-        desc: "Tempora qui architecto soluta sunt consequatur velit est voluptates velit. Aut natus fugit est tempora inventore. Quasi rerum assumenda esse incidunt architecto. Optio veniam eum quae.\n \rQuam velit aspernatur consequatur illum explicabo non consequuntur. Qui nobis qui. Et eum et et et. Nemo mollitia recusandae et autem. Ad illum qui quidem doloremque quis sit quasi quis. Ipsa nisi libero.\n \rVoluptas alias neque voluptatem quod dolores sit. Vel voluptatum quae et sed quia sunt natus. Ut voluptatem dolorum quis. Quidem vel ipsum suscipit beatae sit. Et et tenetur. Officia architecto mollitia.",
+        name: "Investment Account",
+        img: "http://placeimg.com/640/480/transport",
+        desc: "neque",
+        price: "730.00",
+        size: 51251,
+        from: "Greenwood",
         id: "18",
-      },
-      {
-        name: "Chesapeake",
-        img: "http://placeimg.com/640/480",
-        desc: "Illo ducimus eaque quos dolorem fuga placeat tempora perspiciatis.",
-        id: "19",
-      },
-      {
-        name: "Elk Grove",
-        img: "http://placeimg.com/640/480",
-        desc: "Voluptas delectus sint. Voluptatem reiciendis possimus neque qui ipsum. Odio tenetur rerum libero quaerat ipsam.\n \rVoluptatem quae magni sapiente. Totam enim eos recusandae ut sequi nostrum occaecati. Error explicabo architecto eius in voluptates. Dolor sint eligendi sed. Ipsam repellendus molestias ad sit.\n \rQui et quam molestiae eos magnam earum. Iste et atque commodi rerum. Voluptatem iusto aut quos autem.",
-        id: "20",
       },
     ],
   }),
@@ -147,7 +200,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-left: 5rem;
 }
 </style>

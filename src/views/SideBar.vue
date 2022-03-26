@@ -5,7 +5,7 @@
         <!-- ...img logo -->
       </template>
 
-      <vs-sidebar-item id="home">
+      <vs-sidebar-item id="home" to="/">
         <template #icon>
           <span class="material-icons"> home </span>
         </template>

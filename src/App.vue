@@ -6,8 +6,13 @@
           <NavBar />
         </vs-col>
       </vs-row>
-      <vs-row class="side">
-        <vs-col vs-type="flex" vs-justify="center" vs-align="center">
+      <vs-row>
+        <vs-col
+          class="side"
+          vs-type="flex"
+          vs-justify="center"
+          vs-align="center"
+        >
           <SideBar />
         </vs-col>
         <vs-col
@@ -37,20 +42,31 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  min-width: 1100px;
+  min-width: 1340px;
   max-width: 1920px;
 }
 .side {
   margin-top: 3rem;
   height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: sticky;
 }
 .nav {
   position: fixed;
   left: 0;
   top: 0;
+  width: 100%;
+}
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
 }
 </style>
 <script>
