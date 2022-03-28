@@ -7,8 +7,14 @@
           v-model="province"
           :color="'#5b3cc4'"
           filter
+          @change="selectProvince"
+          label-placeholder="Provinces"
           placeholder="Provinces"
+          required
         >
+          <template #message-warn>
+            <span v-if="provinceErr">Hãy chọn một thành phố</span>
+          </template>
           <vs-option label="Vuesax" value="1"> Vuesax </vs-option>
           <vs-option label="Vue" value="2"> Vue </vs-option>
           <vs-option label="Javascript" value="3"> Javascript </vs-option>
@@ -22,6 +28,9 @@
           v-model="district"
           :color="'#5b3cc4'"
           filter
+          @change="selectDistrict"
+          :disabled="DisableSelectDistrict"
+          label-placeholder="Districts"
           placeholder="Districts"
         >
           <vs-option label="Vuesax" value="1"> Vuesax </vs-option>
@@ -37,7 +46,9 @@
           v-model="ward"
           :color="'#5b3cc4'"
           filter
+          :disabled="DisableSelectWard"
           placeholder="Wards"
+          label-placeholder="Wards"
         >
           <vs-option label="Vuesax" value="1"> Vuesax </vs-option>
           <vs-option label="Vue" value="2"> Vue </vs-option>
@@ -56,14 +67,14 @@
           :color="'#5b3cc4'"
           filter
           placeholder="Start"
+          label-placeholder="Start"
         >
-          <vs-option label="Vuesax" value="1"> Vuesax </vs-option>
-          <vs-option label="Vue" value="2"> Vue </vs-option>
-          <vs-option label="Javascript" value="3"> Javascript </vs-option>
-          <vs-option label="Sass" value="4"> Sass </vs-option>
-          <vs-option label="Typescript" value="5"> Typescript </vs-option>
-          <vs-option label="Webpack" value="6"> Webpack </vs-option>
-          <vs-option label="Nodejs" value="7"> Nodejs </vs-option>
+          <vs-option label="Dưới 1 triệu" value="1"> Dưới 1 triệu </vs-option>
+          <vs-option label="1 triệu" value="2"> 1 triệu </vs-option>
+          <vs-option label="2 triệu" value="3"> 2 triệu </vs-option>
+          <vs-option label="3 triệu" value="4"> 3 triệu </vs-option>
+          <vs-option label="5 triệu" value="5"> 5 triệu </vs-option>
+          <vs-option label="trên 5 triệu" value="6"> trên 5 triệu </vs-option>
         </vs-select>
         <vs-select
           class="select"
@@ -138,10 +149,26 @@ export default {
     sort: "1",
     start: 0,
     end: 0,
+    DisableSelectDistrict: true,
+    DisableSelectWard: true,
+    provinceErr: false,
   }),
   methods: {
     submit() {
       console.log("ok");
+    },
+    selectProvince(value) {
+      this.DisableSelectDistrict = false;
+      this.DisableSelectWard = true;
+      this.district = "";
+      this.ward = "";
+
+      console.log(value);
+    },
+    selectDistrict(value) {
+      this.DisableSelectWard = false;
+      this.ward = "";
+      console.log(value);
     },
   },
 };

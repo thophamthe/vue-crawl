@@ -193,6 +193,9 @@ export default {
       },
     ],
   }),
+  created() {
+    console.log("ok");
+  },
 };
 </script>
 <style scoped>
