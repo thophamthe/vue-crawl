@@ -1,9 +1,10 @@
 import axios from "axios";
 
 const axiosBase = axios.create({
-  baseURL: " https://mern-dieu-be-production.up.railway.app/api",
+  baseURL: "http://localhost:8000",
   headers: {
     "Content-type": "application/json; charset=UTF-8",
+    "Access-Control-Allow-Origin": "*",
   },
 });
 
